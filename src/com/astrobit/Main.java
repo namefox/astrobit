@@ -1,5 +1,6 @@
 package com.astrobit;
 
+import astrobit.animation.Animation;
 import astrobit.init.Astrobit;
 import astrobit.objects.GameObject;
 import astrobit.physics.Collider;
@@ -24,7 +25,8 @@ public class Main {
                             "Test",
                             Vector2.zero,
                             new Vector2(1, 1),
-                            new SpriteRenderer(Color.red, "icon.png"),
+                            new SpriteRenderer(Color.white, "sprite_0.png"),
+                            new Animation(2, "sprite_0.png", "sprite_1.png", "sprite_2.png", "sprite_3.png", "sprite_4.png"),
                             new Rigidbody(),
                             new Collider(),
                             new Player()

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d2c23cd-bd48-4ac3-a44b-9c48d8673b91" name="Changes" comment="" />
+    <list default="true" id="5d2c23cd-bd48-4ac3-a44b-9c48d8673b91" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/Astrobit/objects/0.scn" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Astrobit/objects/0.scn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/objects/0.scn" beforeDir="false" afterPath="$PROJECT_DIR$/res/objects/0.scn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/astrobit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +21,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -28,14 +35,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Development/Java/Astrobit",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Development/Java/Astrobit&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="astrobit.render" />
