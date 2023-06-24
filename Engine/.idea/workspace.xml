@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5d2c23cd-bd48-4ac3-a44b-9c48d8673b91" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/example-sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/objects/0.scn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/objects/1.scn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/sprite_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/sprite_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/sprite_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/sprite_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../res/sprite_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/animation/Animation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/events/AstroEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/init/Assets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/init/Astrobit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/init/GamePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/init/GameWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/input/Code.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/input/Input.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/objects/GameObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/objects/Module.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/other/Debug.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/other/GameData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/other/Time.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/other/UnitConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/other/Vector2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/physics/Collider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/physics/ColliderManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/physics/Rigidbody.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/render/ShapeRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/render/SpriteRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/scenes/Scene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/scenes/SceneManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/sound/Sound.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/threading/ThreadOperation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/threading/Threads.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/ui/Button.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/ui/Canvas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/ui/Text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/astrobit/ui/UIObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/astrobit/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/astrobit/Player.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2QhLAvRWMGR1eEUHOqtttXOa1P5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Development/Java/Astrobit/Engine",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Development\Java\Astrobit\res" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Development\Java\Astrobit\res" />
+      <recent name="D:\Development\Java\Astrobit\res\game_assets" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.astrobit" />
+      <recent name="astrobit.render" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Dashboard">
+    <configuration name="Dashboard" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.astrobit.Launcher" />
+      <module name="Astrobit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game Test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="game.test.Main" />
+      <module name="Astrobit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Dashboard" />
+      <item itemvalue="Application.Game Test" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5d2c23cd-bd48-4ac3-a44b-9c48d8673b91" name="Changes" comment="" />
+      <created>1685800726944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685800726944</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+</project>

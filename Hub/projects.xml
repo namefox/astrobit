@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE astrobit.hub.projects>
+<astrobit.hub.projects>
+    <project path="C:\Test\">
+        <name>Test</name>
+        <lastModified>12-12-1212</lastModified>
+        <createdAt>12-12-1212</createdAt>
+        <editorVersion>0.1.0</editorVersion>
+    </project>
+
+    <project path="C:\Test\">
+        <name>Test</name>
+        <lastModified>12-12-1212</lastModified>
+        <createdAt>12-12-1212</createdAt>
+        <editorVersion>0.1.0</editorVersion>
+    </project>
+
+    <project path="C:\Test\">
+        <name>Test</name>
+        <lastModified>12-12-1212</lastModified>
+        <createdAt>12-12-1212</createdAt>
+        <editorVersion>0.1.0</editorVersion>
+    </project>
+
+    <project path="C:\Test\">
+        <name>Test</name>
+        <lastModified>12-12-1212</lastModified>
+        <createdAt>12-12-1212</createdAt>
+        <editorVersion>0.1.0</editorVersion>
+    </project>
+
+    <project path="C:\Test\">
+        <name>Test</name>
+        <lastModified>12-12-1212</lastModified>
+        <createdAt>12-12-1212</createdAt>
+        <editorVersion>0.1.0</editorVersion>
+    </project>
+</astrobit.hub.projects>
