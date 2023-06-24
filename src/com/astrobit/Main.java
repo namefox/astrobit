@@ -1,19 +1,26 @@
 package com.astrobit;
 
 import astrobit.animation.Animation;
+import astrobit.events.AstroEvent;
 import astrobit.init.Astrobit;
 import astrobit.objects.GameObject;
+import astrobit.other.Debug;
 import astrobit.physics.Collider;
 import astrobit.physics.Rigidbody;
 import astrobit.render.ShapeRenderer;
 import astrobit.other.Vector2;
 import astrobit.render.SpriteRenderer;
 import astrobit.scenes.Scene;
+import astrobit.scenes.SceneManager;
+import astrobit.ui.Button;
+import astrobit.ui.Canvas;
+import astrobit.ui.Text;
 
 import java.awt.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 public class Main {
 
@@ -37,6 +44,11 @@ public class Main {
                             new Vector2(16, 5),
                             new ShapeRenderer(new Color(0x008000), ShapeRenderer.Shape.RECT),
                             new Collider()
+                    ),
+                    new Canvas(
+                            "Canvas",
+                            new Text("TestText", Vector2.one.multiply(100).add(new Vector2(0, 100)), "Test", new Font("Arial", Font.PLAIN, 100)),
+                            new Button("Test2", Vector2.one.multiply(100).add(new Vector2(0, 200)), new Vector2(400, 200), "Test", new Font("Arial", Font.PLAIN, 50), (AstroEvent & Serializable) () -> SceneManager.load(1))
                     )
             ));
             outputStream.flush();

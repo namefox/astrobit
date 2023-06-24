@@ -38,6 +38,9 @@ public class SceneManager {
                 modules[j].getValue().render(g);
             }
         }
+
+        if (active.canvas != null)
+            active.canvas.tick(g);
     }
 
     @SuppressWarnings({"unchecked","ForLoopReplaceableByForEach"})

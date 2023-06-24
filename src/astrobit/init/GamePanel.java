@@ -1,5 +1,6 @@
 package astrobit.init;
 
+import astrobit.input.Input;
 import astrobit.other.Time;
 import astrobit.physics.ColliderManager;
 import astrobit.scenes.SceneManager;
@@ -31,13 +32,6 @@ public class GamePanel extends JPanel implements ActionListener {
         setPreferredSize(new Dimension(w * s, h * s));
 
         last = System.currentTimeMillis();
-
-        /*Input in = new Input();
-        addKeyListener(in);
-        addMouseListener(in);
-        addMouseMotionListener(in);
-        addMouseWheelListener(in);*/
-
         timer = new Timer(1000 / (TARGET_FPS * 2), this);
         timer.start();
     }

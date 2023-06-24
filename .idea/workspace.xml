@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2c23cd-bd48-4ac3-a44b-9c48d8673b91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/astrobit/events/AstroEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/astrobit/ui/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/astrobit/ui/Canvas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/astrobit/ui/Text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/astrobit/ui/UIObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Astrobit/objects/0.scn" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Astrobit/objects/0.scn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/objects/0.scn" beforeDir="false" afterPath="$PROJECT_DIR$/res/objects/0.scn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/init/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/init/Assets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/init/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/init/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/init/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/init/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/input/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/input/Code.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/input/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/input/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/objects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/objects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/scenes/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/astrobit/scenes/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/astrobit/scenes/SceneManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/astrobit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

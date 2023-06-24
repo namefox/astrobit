@@ -38,4 +38,9 @@ public final class GameWindow {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
+    public static Insets insets() {
+        if (frame != null) return frame.getInsets();
+        return new Insets(0, 0, 0, 0);
+    }
 }

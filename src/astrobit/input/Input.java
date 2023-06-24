@@ -1,8 +1,10 @@
 package astrobit.input;
 
+import astrobit.init.GameWindow;
 import astrobit.other.UnitConverter;
 import astrobit.other.Vector2;
 
+import java.awt.*;
 import java.awt.event.*;
 
 public final class Input implements KeyListener, MouseListener, MouseMotionListener, MouseWheelListener {
@@ -13,6 +15,7 @@ public final class Input implements KeyListener, MouseListener, MouseMotionListe
     public static double mouseWheel;
     public static boolean mouseIn, mouseOut, mouseDragging;
     public static Vector2 mousePosition = new Vector2(0, 0);
+    public static Vector2 mousePositionPixel = new Vector2(0, 0);
 
     @Override public void keyTyped(KeyEvent e){}
     @Override public void mouseClicked(MouseEvent e){}
@@ -53,11 +56,19 @@ public final class Input implements KeyListener, MouseListener, MouseMotionListe
     @Override
     public void mouseDragged(MouseEvent e) {
         mouseDragging = true;
+
+        Insets sets = GameWindow.insets();
+
+        mousePositionPixel = new Vector2(e.getX() - (sets.left + sets.right), e.getY() - (sets.top + sets.bottom));
+        mousePosition = UnitConverter.pixelToUnit(mousePositionPixel, Vector2.one)[0];
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        mousePosition = UnitConverter.pixelToUnit(new Vector2(e.getX(), e.getY()), Vector2.one)[0];
+        Insets sets = GameWindow.insets();
+
+        mousePositionPixel = new Vector2(e.getX() - (sets.left + sets.right), e.getY() - (sets.top + sets.bottom));
+        mousePosition = UnitConverter.pixelToUnit(mousePositionPixel, Vector2.one)[0];
     }
 
     @Override

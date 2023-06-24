@@ -34,7 +34,7 @@ public class SpriteRenderer extends Module {
 
     public void setImage(String image) {
         this.image = image;
-        this.img = Assets.sprite(image);
+        this.img = tint(Assets.sprite(image), color);
     }
 
     public void setColor(Color color) {

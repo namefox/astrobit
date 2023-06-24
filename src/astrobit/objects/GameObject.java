@@ -63,6 +63,19 @@ public class GameObject implements java.io.Serializable {
         modules.put(module.getClass(), module);
     }
 
+    public GameObject child(String name) {
+        return children.get(name);
+    }
+
+    public void removeChild(String name) {
+        children.remove(name);
+    }
+
+    public void addChild(GameObject child) {
+        child.init(scene);
+        children.put(child.name, child);
+    }
+
     public void init(Scene scene) {
         this.scene = scene;
     }

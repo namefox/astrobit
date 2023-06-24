@@ -188,7 +188,10 @@ public enum Code {
     COPY(65485),
     PASTE(65487),
     FIND(65488),
-    CUT(65489);
+    CUT(65489),
+    MOUSE_LEFT(1),
+    MOUSE_RIGHT(3),
+    MOUSE_MIDDLE(2);
 
     public final int value;
 

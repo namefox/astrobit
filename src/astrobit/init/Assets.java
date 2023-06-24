@@ -6,6 +6,7 @@ import astrobit.sound.Sound;
 import javax.imageio.ImageIO;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.HashMap;
@@ -94,6 +95,26 @@ public final class Assets {
             if (canCache) cache.put(path, sound);
             return sound;
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {
+            Astrobit.error(e);
+        }
+
+        return null;
+    }
+
+    public static Font font(String path, boolean canCache) {
+        if (cache.containsKey(path)) return (Font) cache.get(path);
+
+        try {
+            InputStream in = Assets.class.getResourceAsStream('/' + path);
+            if (in == null) throw new IOException("Path does not exist.");
+
+            Font font = Font.createFont(Font.TRUETYPE_FONT, in);
+            if (canCache) cache.put(path, font);
+
+            in.close();
+
+            return font;
+        } catch (IOException | FontFormatException e) {
             Astrobit.error(e);
         }
 
