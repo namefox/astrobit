@@ -1,5 +1,8 @@
-package com.astrobit.hub;
+package com.astrobit.hub.windows;
 
+import com.astrobit.hub.Debug;
+import com.astrobit.hub.HubConfiguration;
+import com.astrobit.hub.components.Page;
 import com.astrobit.hub.pages.ExtensionsTabbedPane;
 import com.astrobit.hub.pages.InstallsPage;
 import com.astrobit.hub.pages.ProjectsPage;
@@ -7,15 +10,25 @@ import com.astrobit.hub.pages.SettingsPage;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.io.IOException;
+import java.io.InputStream;
 
-public class MainWindow extends JFrame {
+public class Main extends JFrame {
 
     private Page page;
-    private static MainWindow instance;
+    public static Main instance;
 
-    public MainWindow() {
+    public Main() {
         setTitle("Astrobit Hub");
+        try {
+            InputStream in = getClass().getResourceAsStream("/icon.png");
+            if (in != null)
+                setIconImage(ImageIO.read(in));
+        } catch (IOException e) {
+            Debug.error(e);
+        }
         setSize(1152, 648);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -51,7 +64,7 @@ public class MainWindow extends JFrame {
         else
             FlatLightLaf.setup();
 
-        SwingUtilities.invokeLater(MainWindow::new);
+        SwingUtilities.invokeLater(Main::new);
     }
 
     @SuppressWarnings("SpellCheckingInspection")

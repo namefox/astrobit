@@ -1,6 +1,6 @@
 package com.astrobit.hub.pages;
 
-import com.astrobit.hub.Page;
+import com.astrobit.hub.components.Page;
 
 import javax.swing.*;
 

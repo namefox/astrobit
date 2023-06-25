@@ -1,4 +1,4 @@
-package com.astrobit.hub;
+package com.astrobit.hub.components;
 
 import javax.swing.*;
 
