@@ -1,16 +1,17 @@
 package com.astrobit.hub;
 
+import com.astrobit.hub.pages.ExtensionsTabbedPane;
+import com.astrobit.hub.pages.InstallsPage;
+import com.astrobit.hub.pages.ProjectsPage;
+import com.astrobit.hub.pages.SettingsPage;
 import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.*;
-import java.awt.*;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
 
 public class MainWindow extends JFrame {
 
-    private static JPanel page;
+    private Page page;
     private static MainWindow instance;
 
     public MainWindow() {
@@ -19,33 +20,47 @@ public class MainWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        instance = this;
+        page = new ProjectsPage();
+        page.onShow();
 
-        add(new SideBar(), BorderLayout.WEST);
-        setPage(ProjectsPage.class);
+        JTabbedPane tabbedPane = new JTabbedPane();
+        tabbedPane.setTabPlacement(JTabbedPane.LEFT);
 
+        tabbedPane.addTab("Projects", page);
+        tabbedPane.addTab("Extensions", new ExtensionsTabbedPane());
+        tabbedPane.addTab("Settings", new SettingsPage());
+        tabbedPane.addTab("Installs", new InstallsPage());
+
+        tabbedPane.addChangeListener(e -> {
+            page.reset();
+            page = (Page) tabbedPane.getSelectedComponent();
+            page.onShow();
+        });
+
+        add(tabbedPane);
         setVisible(true);
-    }
 
-    public static void setPage(Class<? extends JPanel> panel) {
-        if (page != null) {
-            if (page.getClass() == panel) return;
-            instance.remove(page);
-        }
-
-        try {
-            page = panel.getConstructor().newInstance();
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-
-        instance.add(page);
-        instance.revalidate();
-        instance.repaint();
+        instance = this;
     }
 
     public static void main(String[] args) {
-        FlatDarkLaf.setup();
+        HubConfiguration.setup();
+
+        if ((boolean)HubConfiguration.get("dark", false))
+            FlatDarkLaf.setup();
+        else
+            FlatLightLaf.setup();
+
         SwingUtilities.invokeLater(MainWindow::new);
+    }
+
+    @SuppressWarnings("SpellCheckingInspection")
+    public static void setTheme(String name) {
+        try {
+            UIManager.setLookAndFeel("com.formdev.flatlaf.Flat" + name + "Laf");
+            SwingUtilities.updateComponentTreeUI(instance);
+        } catch (Exception e) {
+            Debug.error(e);
+        }
     }
 }
