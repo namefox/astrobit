@@ -3,6 +3,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import { initializeApp } from "firebase/app";
+import extensionRoutes from "./routes/extensions.js";
 
 dotenv.config();
 
@@ -22,5 +23,7 @@ app.use(express.static("public"))
 app.use(express.static("pages"));
 app.use(helmet());
 app.use(morgan("common"));
+
+app.use("/api/extensions", extensionRoutes);
 
 app.listen(port, () => console.log(`Server started at port ${port}`));
