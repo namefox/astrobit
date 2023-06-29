@@ -9,8 +9,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Date;
 
 public class ProjectComponent extends JButton {
+    
+    private boolean nullify;
 
     public ProjectComponent(Project project) {
         setBorder(BorderFactory.createCompoundBorder(
@@ -19,17 +22,23 @@ public class ProjectComponent extends JButton {
         ));
         setLayout(new GridLayout(2, 3));
 
-        String[] split = project.path().split("/");
+        Project p = project;
+        if (p == null) {
+            p = new Project("", "", new Date());
+            nullify = true;
+        }
+
+        String[] split = p.path().split("/");
         String projectName = split[split.length - 1];
 
         add(infoLabel("Name"));
         add(infoLabel("Editor"));
         add(infoLabel("Modified"));
         add(label(projectName));
-        add(label(project.editorVersion()));
-        add(label(project.modified().toString()));
+        add(label(p.editorVersion()));
+        add(label(p.modified().toString()));
 
-        addActionListener(e -> {
+        if (!nullify) addActionListener(e -> {
             try {
                 Files.write(Paths.get(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "lastOpenProject"), project.path().getBytes());
 
@@ -44,13 +53,13 @@ public class ProjectComponent extends JButton {
     }
 
     private JLabel infoLabel(String text) {
-        JLabel label = new JLabel(text);
+        JLabel label = new JLabel(!nullify ? text : "       ");
         label.setForeground(new Color(label.getForeground().getRGB() + 0xFF000000, true));
         return label;
     }
 
     private JLabel label(String text) {
-        JLabel label = new JLabel(text);
+        JLabel label = new JLabel(!nullify ? text : "       ");
         label.setFont(label.getFont().deriveFont(label.getFont().getSize() + 5f).deriveFont(Font.BOLD));
         return label;
     }

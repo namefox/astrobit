@@ -19,7 +19,8 @@ public class ProjectsPage extends Page {
 
     private HashMap<String, ArrayList<Project>> lists;
     private final JTabbedPane tabbedPane;
-    private int sortBy, tab;
+    private int sortBy;
+    private String tab;
 
     public ProjectsPage() {
         JPanel top = new JPanel();
@@ -113,10 +114,27 @@ public class ProjectsPage extends Page {
                     all.add(new ProjectComponent(project));
             }
 
+            int min = 10;
+            if (tab.getComponents().length < min) {
+                for (int i = 0; i < min - tab.getComponents().length; i++)
+                    tab.add(new ProjectComponent(null));
+            }
+
             tabbedPane.addTab(entry.getKey(), new JScrollPane(tab));
         }
 
-        tabbedPane.setSelectedIndex(tab);
+        int t = 0;
+        int i = 0;
+        for (Map.Entry<String, ArrayList<Project>> entry: sort.entrySet()) {
+            i++;
+
+            if (entry.getKey().equals(tab)) {
+                t = i;
+                break;
+            }
+        }
+
+        tabbedPane.setSelectedIndex(t);
 
         tabbedPane.revalidate();
         tabbedPane.repaint();
@@ -126,7 +144,7 @@ public class ProjectsPage extends Page {
     public void reset() {
         HubConfiguration.set("projects", lists);
 
-        tab = tabbedPane.getSelectedIndex();
+        tab = tabbedPane.getTitleAt(tabbedPane.getSelectedIndex());
         tabbedPane.removeAll();
     }
 }

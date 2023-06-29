@@ -12,6 +12,8 @@ import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -31,6 +33,11 @@ public class Main extends JFrame {
         }
         setSize(1152, 648);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                page.reset();
+            }
+        });
         setLocationRelativeTo(null);
 
         page = new ProjectsPage();
@@ -54,6 +61,11 @@ public class Main extends JFrame {
         setVisible(true);
 
         instance = this;
+    }
+
+    public static void resetPage() {
+        instance.page.reset();
+        instance.page.onShow();
     }
 
     public static void main(String[] args) {
