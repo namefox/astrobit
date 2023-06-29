@@ -44,7 +44,10 @@ public class Sorts {
     }
 
     public static Comparator<String> alphabeticalMap() {
-        return (o1, o2) -> {
+        return (one, two) -> {
+            String o1 = one == null ? "_Unnamed" : one;
+            String o2 = two == null ? "_Unnamed" : two;
+
             char[] chars1 = o1.toCharArray();
             char[] chars2 = o2.toCharArray();
 

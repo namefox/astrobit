@@ -5,6 +5,7 @@ import com.astrobit.hub.Project;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -65,12 +66,15 @@ public class CreateProjectForm extends JDialog {
         @SuppressWarnings("unchecked")
         HashMap<String, ArrayList<Project>> lists = (HashMap<String, ArrayList<Project>>) HubConfiguration.get("projects", new HashMap<>());;
 
-        ArrayList<Project> list = lists.get(group.getText());
+        String g = group.getText();
+        if (g.isBlank()) g = null;
+
+        ArrayList<Project> list = lists.get(g);
         if (list == null)
             list = new ArrayList<>();
 
-        list.add(new Project(name.getText(), (String) HubConfiguration.get("latestEditorVersion", "Unknown"), new Date()));
-        lists.put(group.getText(), list);
+        list.add(new Project(path.getText() + File.separator + name.getText(), (String) HubConfiguration.get("latestEditorVersion", "Unknown")));
+        lists.put(g, list);
 
         HubConfiguration.set("projects", lists);
 

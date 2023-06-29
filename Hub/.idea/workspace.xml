@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae2b7b58-b435-493b-a19a-4a4057edfae0" name="Changes" comment="Project sorting">
+      <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/Sorts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/Sorts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/components/ProjectComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/components/ProjectComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/pages/ProjectsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/pages/ProjectsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/pages/SettingsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/pages/SettingsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/windows/CreateProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/windows/CreateProjectForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/windows/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/windows/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,16 +90,5 @@
     <MESSAGE value="ProjectComponent and opening projects" />
     <MESSAGE value="Project sorting" />
     <option name="LAST_COMMIT_MESSAGE" value="Project sorting" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/astrobit/hub/components/ProjectComponent.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

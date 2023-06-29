@@ -71,10 +71,32 @@ public class ProjectsPage extends Page {
         if (chooser.showOpenDialog(Main.instance) != 0) return;
 
         try {
-            Files.write(Paths.get(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "lastOpenProject"), chooser.getSelectedFile().getAbsolutePath().getBytes());
+            String path = chooser.getSelectedFile().getAbsolutePath();
+
+            ArrayList<Project> list = lists.getOrDefault(null, new ArrayList<>());
+
+            boolean notFound = true;
+            for (Project project: list) {
+                if (project.path().equals(path)) {
+                    project.modify();
+                    notFound = false;
+                    break;
+                }
+            }
+
+            if (notFound)
+                list.add(new Project(path, (String) HubConfiguration.get("latestEditorVersion", "Unknown")));
+
+            lists.put(null, list);
+            HubConfiguration.set("projects", lists);
+
+            Files.write(Paths.get(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "lastOpenProject"), path.getBytes());
+
+            String p = (String) HubConfiguration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors");
+            p += File.separator + HubConfiguration.get("latestEditorVersion", "Unknown");
 
             Desktop desktop = Desktop.getDesktop();
-            desktop.open(new File("./editor.exe"));
+            desktop.open(new File(p + File.separator + "bin" + File.separator + "editor.exe"));
 
             System.exit(0);
         } catch (IOException e1) {
@@ -95,6 +117,7 @@ public class ProjectsPage extends Page {
         TreeMap<String, ArrayList<Project>> sort = new TreeMap<>(Sorts.alphabeticalMap());
         sort.putAll(lists);
 
+        int min = 10;
         for (Map.Entry<String, ArrayList<Project>> entry: sort.entrySet()) {
             JPanel tab;
 
@@ -114,7 +137,8 @@ public class ProjectsPage extends Page {
                     all.add(new ProjectComponent(project));
             }
 
-            int min = 10;
+            if (entry.getKey() == null) continue;
+
             if (tab.getComponents().length < min) {
                 for (int i = 0; i < min - tab.getComponents().length; i++)
                     tab.add(new ProjectComponent(null));
@@ -123,10 +147,17 @@ public class ProjectsPage extends Page {
             tabbedPane.addTab(entry.getKey(), new JScrollPane(tab));
         }
 
+        if (all.getComponents().length < min) {
+            for (int i = 0; i < min - all.getComponents().length; i++)
+                all.add(new ProjectComponent(null));
+        }
+
         int t = 0;
         int i = 0;
         for (Map.Entry<String, ArrayList<Project>> entry: sort.entrySet()) {
             i++;
+
+            if (entry.getKey() == null) continue;
 
             if (entry.getKey().equals(tab)) {
                 t = i;
