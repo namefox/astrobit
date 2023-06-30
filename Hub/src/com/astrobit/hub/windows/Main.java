@@ -1,12 +1,12 @@
 package com.astrobit.hub.windows;
 
-import com.astrobit.hub.Debug;
-import com.astrobit.hub.HubConfiguration;
 import com.astrobit.hub.components.Page;
 import com.astrobit.hub.pages.ExtensionsTabbedPane;
 import com.astrobit.hub.pages.InstallsPage;
 import com.astrobit.hub.pages.ProjectsPage;
 import com.astrobit.hub.pages.SettingsPage;
+import com.astrobit.shared.Configuration;
+import com.astrobit.shared.Debug;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
@@ -69,12 +69,9 @@ public class Main extends JFrame {
     }
 
     public static void main(String[] args) {
-        HubConfiguration.setup();
+        Configuration.setup("hub");
 
-        if ((boolean)HubConfiguration.get("dark", false))
-            FlatDarkLaf.setup();
-        else
-            FlatLightLaf.setup();
+        setTheme((String) Configuration.get("theme", "Light"));
 
         SwingUtilities.invokeLater(Main::new);
     }
@@ -83,7 +80,8 @@ public class Main extends JFrame {
     public static void setTheme(String name) {
         try {
             UIManager.setLookAndFeel("com.formdev.flatlaf.Flat" + name + "Laf");
-            SwingUtilities.updateComponentTreeUI(instance);
+            if (instance != null)
+                SwingUtilities.updateComponentTreeUI(instance);
         } catch (Exception e) {
             Debug.error(e);
         }

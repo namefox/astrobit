@@ -5,6 +5,8 @@ import com.astrobit.hub.windows.Main;
 import com.astrobit.hub.components.Page;
 import com.astrobit.hub.components.ProjectComponent;
 import com.astrobit.hub.windows.CreateProjectForm;
+import com.astrobit.shared.Configuration;
+import com.astrobit.shared.Debug;
 
 import javax.swing.*;
 import java.awt.*;
@@ -85,15 +87,15 @@ public class ProjectsPage extends Page {
             }
 
             if (notFound)
-                list.add(new Project(path, (String) HubConfiguration.get("latestEditorVersion", "Unknown")));
+                list.add(new Project(path, (String) Configuration.get("latestEditorVersion", "Unknown")));
 
             lists.put(null, list);
-            HubConfiguration.set("projects", lists);
+            Configuration.set("projects", lists);
 
             Files.write(Paths.get(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "lastOpenProject"), path.getBytes());
 
-            String p = (String) HubConfiguration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors");
-            p += File.separator + HubConfiguration.get("latestEditorVersion", "Unknown");
+            String p = (String) Configuration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors");
+            p += File.separator + Configuration.get("latestEditorVersion", "Unknown");
 
             Desktop desktop = Desktop.getDesktop();
             desktop.open(new File(p + File.separator + "bin" + File.separator + "editor.exe"));
@@ -107,7 +109,7 @@ public class ProjectsPage extends Page {
     @Override
     @SuppressWarnings("unchecked")
     public void onShow() {
-        lists = (HashMap<String, ArrayList<Project>>) HubConfiguration.get("projects", new HashMap<>());
+        lists = (HashMap<String, ArrayList<Project>>) Configuration.get("projects", new HashMap<>());
 
         JPanel all = new JPanel();
         all.setLayout(new BoxLayout(all, BoxLayout.Y_AXIS));
@@ -173,7 +175,7 @@ public class ProjectsPage extends Page {
 
     @Override
     public void reset() {
-        HubConfiguration.set("projects", lists);
+        Configuration.set("projects", lists);
 
         tab = tabbedPane.getTitleAt(tabbedPane.getSelectedIndex());
         tabbedPane.removeAll();

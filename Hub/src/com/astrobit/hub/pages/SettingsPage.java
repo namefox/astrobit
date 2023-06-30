@@ -1,8 +1,8 @@
 package com.astrobit.hub.pages;
 
-import com.astrobit.hub.HubConfiguration;
 import com.astrobit.hub.components.Page;
 import com.astrobit.hub.windows.Main;
+import com.astrobit.shared.Configuration;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ public class SettingsPage extends Page {
 
     private final JTextField defaultProjectPath;
     private final JTextField defaultInstallPath;
-    private final JCheckBox darkMode;
+    private final JComboBox<String> theme;
 
     public SettingsPage() {
         setLayout(new BorderLayout());
@@ -22,11 +22,12 @@ public class SettingsPage extends Page {
 
         defaultProjectPath = new JTextField();
         defaultInstallPath = new JTextField();
-        darkMode = new JCheckBox("Dark Mode");
+        theme = new JComboBox<>();
+        theme.setModel(new DefaultComboBoxModel<>(new String[] {"Light", "Dark", "IntelliJ", "Darcula"}));
 
         box.add(formPanel(new JLabel("Default Project Path: "), defaultProjectPath, browse(defaultProjectPath)));
         box.add(formPanel(new JLabel("Default Install Path: "), defaultInstallPath, browse(defaultInstallPath)));
-        box.add(formPanel(null, darkMode, null));
+        box.add(formPanel(new JLabel("Theme: "), theme, null));
 
         add(box);
 
@@ -46,11 +47,11 @@ public class SettingsPage extends Page {
     }
 
     private void save() {
-        HubConfiguration.set("projectPath", defaultProjectPath.getText());
-        HubConfiguration.set("installPath", defaultInstallPath.getText());
-        HubConfiguration.set("dark", darkMode.isSelected());
+        Configuration.set("projectPath", defaultProjectPath.getText());
+        Configuration.set("installPath", defaultInstallPath.getText());
+        Configuration.set("theme", theme.getSelectedItem());
 
-        Main.setTheme(darkMode.isSelected() ? "Dark" : "Light");
+        Main.setTheme((String) theme.getSelectedItem());
     }
 
     private JPanel formPanel(Component west, Component center, Component east) {
@@ -83,9 +84,9 @@ public class SettingsPage extends Page {
 
     @Override
     public void onShow() {
-        defaultProjectPath.setText((String) HubConfiguration.get("projectPath", System.getProperty("user.home")));
-        defaultInstallPath.setText((String) HubConfiguration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors"));
-        darkMode.setSelected((Boolean) HubConfiguration.get("dark", false));
+        defaultProjectPath.setText((String) Configuration.get("projectPath", System.getProperty("user.home")));
+        defaultInstallPath.setText((String) Configuration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors"));
+        theme.setSelectedItem(Configuration.get("theme", "Light"));
     }
 
     @Override public void reset() {}

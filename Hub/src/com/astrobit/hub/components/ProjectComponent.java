@@ -1,8 +1,8 @@
 package com.astrobit.hub.components;
 
-import com.astrobit.hub.Debug;
-import com.astrobit.hub.HubConfiguration;
 import com.astrobit.hub.Project;
+import com.astrobit.shared.Configuration;
+import com.astrobit.shared.Debug;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Date;
 import java.util.regex.Pattern;
 
 public class ProjectComponent extends JButton {
@@ -44,8 +43,8 @@ public class ProjectComponent extends JButton {
             try {
                 Files.write(Paths.get(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "lastOpenProject"), project.path().getBytes());
 
-                String path = (String) HubConfiguration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors");
-                path += File.separator + HubConfiguration.get("latestEditorVersion", "Unknown");
+                String path = (String) Configuration.get("installPath", System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "editors");
+                path += File.separator + Configuration.get("latestEditorVersion", "Unknown");
 
                 Desktop desktop = Desktop.getDesktop();
                 desktop.open(new File(path + File.separator + "bin" + File.separator + "editor.exe"));

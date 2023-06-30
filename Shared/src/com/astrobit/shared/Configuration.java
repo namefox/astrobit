@@ -1,17 +1,17 @@
-package com.astrobit.hub;
+package com.astrobit.shared;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.util.HashMap;
 
-public final class HubConfiguration {
+public final class Configuration {
 
     private static HashMap<String, Object> config;
     private static File file;
 
     @SuppressWarnings("unchecked")
-    public static void setup(){
-        file = new File(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + "hub");
+    public static void setup(String name) {
+        file = new File(System.getProperty("user.home") + File.separator + ".astrobit" + File.separator + name);
         if (!file.getParentFile().exists()) {
             try {
                 Files.createDirectories(file.getParentFile().toPath());

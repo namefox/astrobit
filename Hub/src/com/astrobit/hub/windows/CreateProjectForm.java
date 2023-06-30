@@ -1,13 +1,12 @@
 package com.astrobit.hub.windows;
 
-import com.astrobit.hub.HubConfiguration;
 import com.astrobit.hub.Project;
+import com.astrobit.shared.Configuration;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 
 public class CreateProjectForm extends JDialog {
@@ -64,7 +63,7 @@ public class CreateProjectForm extends JDialog {
 
     private void proceed() {
         @SuppressWarnings("unchecked")
-        HashMap<String, ArrayList<Project>> lists = (HashMap<String, ArrayList<Project>>) HubConfiguration.get("projects", new HashMap<>());;
+        HashMap<String, ArrayList<Project>> lists = (HashMap<String, ArrayList<Project>>) Configuration.get("projects", new HashMap<>());;
 
         String g = group.getText();
         if (g.isBlank()) g = null;
@@ -73,10 +72,10 @@ public class CreateProjectForm extends JDialog {
         if (list == null)
             list = new ArrayList<>();
 
-        list.add(new Project(path.getText() + File.separator + name.getText(), (String) HubConfiguration.get("latestEditorVersion", "Unknown")));
+        list.add(new Project(path.getText() + File.separator + name.getText(), (String) Configuration.get("latestEditorVersion", "Unknown")));
         lists.put(g, list);
 
-        HubConfiguration.set("projects", lists);
+        Configuration.set("projects", lists);
 
         Main.resetPage();
 
@@ -127,7 +126,7 @@ public class CreateProjectForm extends JDialog {
 
     private void setupCenter(JPanel center) {
         name = field("New Project");
-        path = field((String) HubConfiguration.get("projectPath", System.getProperty("user.home")));
+        path = field((String) Configuration.get("projectPath", System.getProperty("user.home")));
 
         group = field("");
         group.setToolTipText("Leave blank for no group");
