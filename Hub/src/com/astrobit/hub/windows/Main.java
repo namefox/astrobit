@@ -72,7 +72,6 @@ public class Main extends JFrame {
         Configuration.setup("hub");
 
         setTheme((String) Configuration.get("theme", "Light"));
-
         SwingUtilities.invokeLater(Main::new);
     }
 

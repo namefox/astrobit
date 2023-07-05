@@ -64,6 +64,24 @@ public class Sorts {
         };
     }
 
+    public static Comparator<Install> editorVersionInstall() {
+        return (o1, o2) -> {
+            char[] chars1 = o1.version().toCharArray();
+            char[] chars2 = o2.version().toCharArray();
+
+            for (int i = 0; i < chars1.length; i++) {
+                if (i >= chars2.length) return MULTIPLIER;
+
+                if (chars1[i] == chars2[i]) continue;
+
+                if (chars1[i] > chars2[i]) return -MULTIPLIER;
+                if (chars1[i] < chars2[i]) return MULTIPLIER;
+            }
+
+            return 0;
+        };
+    }
+
     public static Comparator<Project> editorVersion() {
         return (o1, o2) -> {
             char[] chars1 = o1.editorVersion().toCharArray();
@@ -83,11 +101,15 @@ public class Sorts {
     }
 
     public static Comparator<Project> get(int index) {
-        return switch (index) {
-            case 1 -> alphabetical();
-            case 2 -> lastModified();
-            case 3 -> editorVersion();
-            default -> defaultComparator();
-        };
+        switch (index) {
+            case 1:
+                return alphabetical();
+            case 2:
+                return lastModified();
+            case 3:
+                return editorVersion();
+        }
+
+        return defaultComparator();
     }
 }

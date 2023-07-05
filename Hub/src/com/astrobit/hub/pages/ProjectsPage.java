@@ -119,7 +119,7 @@ public class ProjectsPage extends Page {
         TreeMap<String, ArrayList<Project>> sort = new TreeMap<>(Sorts.alphabeticalMap());
         sort.putAll(lists);
 
-        int min = 10;
+        int min = 12;
         for (Map.Entry<String, ArrayList<Project>> entry: sort.entrySet()) {
             JPanel tab;
 
@@ -167,6 +167,7 @@ public class ProjectsPage extends Page {
             }
         }
 
+        if (t >= tabbedPane.getTabCount()) t--;
         tabbedPane.setSelectedIndex(t);
 
         tabbedPane.revalidate();

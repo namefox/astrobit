@@ -1,11 +1,10 @@
 package com.astrobit.hub;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public final class Project implements Serializable {
+public class Project implements Serializable {
 
     private String path;
     private String editorVersion;
