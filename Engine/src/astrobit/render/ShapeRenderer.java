@@ -30,8 +30,12 @@ public class ShapeRenderer extends Module {
         Vector2 size = vec2s[1];
 
         switch (shape) {
-            case OVAL -> g.fillOval((int)position.x, (int)position.y, (int)size.x, (int)size.y);
-            case RECT -> g.fillRect((int)position.x, (int)position.y, (int)size.x, (int)size.y);
+            case OVAL:
+                g.fillOval((int)position.x, (int)position.y, (int)size.x, (int)size.y);
+                break;
+            case RECT:
+                g.fillRect((int)position.x, (int)position.y, (int)size.x, (int)size.y);
+                break;
         }
     }
 }

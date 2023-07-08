@@ -17,8 +17,8 @@ public class Scene implements java.io.Serializable {
         gameObjects = new HashMap<>();
         for (GameObject object: objects) {
             object.init(this);
-            if (object instanceof Canvas obj) {
-                canvas = obj;
+            if (object instanceof Canvas) {
+                canvas = (Canvas) object;
                 continue;
             }
 

@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae2b7b58-b435-493b-a19a-4a4057edfae0" name="Changes" comment="Project sorting">
+      <change beforePath="$PROJECT_DIR$/../Engine/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Engine/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Engine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Engine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Engine/res/objects/0.scn" beforeDir="false" afterPath="$PROJECT_DIR$/../Engine/res/objects/0.scn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Engine/src/astrobit/render/ShapeRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Engine/src/astrobit/render/ShapeRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Engine/src/astrobit/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Engine/src/astrobit/scenes/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/astrobit/hub/pages/InstallsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/astrobit/hub/pages/InstallsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/img/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/img/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Web/js/writer.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
