@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { initializeApp } from "firebase/app";
 
 import editorRoutes from "./routes/editor.js";
+import extensionRoutes from "./routes/extensions.js";
 
 dotenv.config();
 initializeApp({
@@ -33,5 +34,6 @@ app.use(helmet());
 app.use(morgan("common"));
 
 app.use("/api/editor", editorRoutes());
+app.use("/api/extensions", extensionRoutes());
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
